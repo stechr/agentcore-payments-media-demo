@@ -1,0 +1,12 @@
+{
+  "article": {
+    "title": "Agent Traffic Report: 23% of News Site Visits Now From AI",
+    "author": "Sarah Chen, Senior Analyst",
+    "publishedDate": "2026-05-20",
+    "merchant": "mediatech-daily",
+    "content": "Our analysis of 500 million page views across 200 publishers between January and May 2026 reveals a dramatic shift in traffic composition. AI agent traffic has grown from 8% to 23% of total visits in just six months.\n\nKey findings:\n\n1. TRAFFIC COMPOSITION: AI agents now account for 23% of all news site visits, up from 8% in November 2025. Growth is accelerating — the last 30 days alone saw a 4 percentage point increase.\n\n2. PAYMENT BEHAVIOR: Agents using x402 micropayments have 3x higher content completion rates (92%) compared to agents that scrape (31%). Paying agents also access 5x more articles per session.\n\n3. REVENUE IMPACT: Publishers with x402 paywalls report $0.003-0.015 per agent visit vs $0.002-0.008 CPM from programmatic ads. Agent traffic is 2-4x more valuable per visit than human ad-supported traffic.\n\n4. CONTENT PREFERENCES: Agents disproportionately consume data-heavy content (financial reports, market analysis, structured datasets) over opinion pieces. Premium research content sees 8x higher agent purchase rates.\n\n5. PUBLISHER ADOPTION: 34 of the top 200 publishers now support x402. Early adopters report 12-18% revenue uplift from agent payments alone.\n\nMethodology: Panel of 200 publishers using our analytics SDK. Traffic classification via user-agent analysis, behavioral fingerprinting, and payment protocol detection. 95% confidence interval ±2.1%.",
+    "wordCount": 2400,
+    "methodology": "primary-research",
+    "sampleSize": "500M page views, 200 publishers"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "programmatic-adtech-shift",
+  "title": "The Programmatic Shift: Why DSPs Are Losing Ground to Agent-Native Buying",
+  "author": "Marcus Webb",
+  "published": "2026-05-18",
+  "tier": "standard",
+  "price_usdc": 0.003,
+  "word_count": 950,
+  "summary": "Traditional demand-side platforms face disruption as AI agents begin bidding directly on ad inventory without human media buyers in the loop.",
+  "content": "The $600B programmatic advertising market is facing its first architectural disruption since real-time bidding emerged in 2009. AI agents are beginning to bypass traditional DSPs entirely, bidding on inventory through direct integrations with SSPs and exchanges.\n\nThe economics are compelling: a traditional DSP charges 15-25% of media spend as a platform fee. An agent-native buying system reduces this to near-zero marginal cost per transaction — the agent's infrastructure cost is amortized across thousands of campaigns.\n\nThree patterns are emerging:\n\n1. Agent-Direct Bidding: Agents connect directly to ad exchanges via OpenRTB 3.0, eliminating the DSP middleware layer entirely. Early adopters report 18% lower effective CPMs due to reduced intermediary fees.\n\n2. Micro-Budget Campaigns: Agents enable campaigns with $10-50 daily budgets that were previously uneconomical for DSPs to serve. This opens premium inventory to long-tail advertisers for the first time.\n\n3. Real-Time Creative Optimization: Agents generate and test creative variants in real-time during the bidding process, rather than pre-loading a fixed creative set.\n\nThe incumbents aren't standing still. LoopReel Ads has launched an 'Agent API' that positions their platform as infrastructure rather than interface. DriftScreen's DV360 now offers a headless mode designed for programmatic agent access.\n\nBut the fundamental question remains: if the value of a DSP was its UI, algorithms, and data — and agents can replicate all three — what's left to charge for?"
+}

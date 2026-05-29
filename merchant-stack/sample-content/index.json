@@ -1,0 +1,19 @@
+{
+  "catalog": {
+    "name": "MediaTech Daily",
+    "description": "Premium media industry intelligence — AI agents pay per article via x402",
+    "pricing": {
+      "standard": { "amount": 0.003, "currency": "USDC", "description": "News articles" },
+      "premium": { "amount": 0.01, "currency": "USDC", "description": "Research & analysis" },
+      "data": { "amount": 0.005, "currency": "USDC", "description": "Structured data feeds" }
+    },
+    "articles": [
+      { "id": "streaming-wars-q2", "path": "/articles/streaming-wars-q2.json", "tier": "standard", "title": "Streaming Wars Q2 2026: Who's Winning the Attention Economy" },
+      { "id": "ai-content-moderation", "path": "/articles/ai-content-moderation.json", "tier": "standard", "title": "AI Content Moderation: How Publishers Are Scaling Trust & Safety" },
+      { "id": "programmatic-adtech-shift", "path": "/articles/programmatic-adtech-shift.json", "tier": "standard", "title": "The Programmatic Shift: Why DSPs Are Losing Ground to Agent-Native Buying" },
+      { "id": "publisher-revenue-analysis", "path": "/premium/publisher-revenue-analysis.json", "tier": "premium", "title": "Publisher Revenue Deep Dive: Subscription Fatigue and the Micropayment Opportunity" },
+      { "id": "agent-traffic-report", "path": "/premium/agent-traffic-report.json", "tier": "premium", "title": "Agent Traffic Report: 23% of News Site Visits Now Come from AI Systems" },
+      { "id": "streaming-metrics-feed", "path": "/data/streaming-metrics-feed.json", "tier": "data", "title": "Real-Time Streaming Platform Metrics (Updated Hourly)" }
+    ]
+  }
+}

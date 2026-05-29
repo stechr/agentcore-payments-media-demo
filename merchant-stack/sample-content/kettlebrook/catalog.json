@@ -1,0 +1,46 @@
+{
+  "catalog": {
+    "name": "Kettlebrook Analytics",
+    "merchantId": "kettlebrook",
+    "articles": [
+      {
+        "id": "adtech-agent-disruption",
+        "path": "/kettlebrook/articles/adtech-agent-disruption.json",
+        "tier": "standard",
+        "price": 0.004,
+        "preview": {
+          "title": "How AI Agents Are Disrupting the AdTech Stack",
+          "abstract": "Analysis of how autonomous agents bypass traditional ad-supported content models. Covers impact on DSPs, SSPs, and publisher ad revenue when 20%+ of traffic doesn't render ads.",
+          "keywords": ["adtech", "agent-traffic", "ad-revenue-impact", "DSP"],
+          "wordCount": 1600
+        },
+        "qualitySignals": {
+          "publishedDate": "2026-05-18",
+          "citationCount": 4,
+          "publisherVerified": true,
+          "dataFreshness": "9d",
+          "methodology": "industry-analysis"
+        }
+      },
+      {
+        "id": "content-monetization-landscape",
+        "path": "/kettlebrook/premium/content-monetization-landscape.json",
+        "tier": "premium",
+        "price": 0.006,
+        "preview": {
+          "title": "Content Monetization Landscape 2026: Ads, Subs, and Machine Payments",
+          "abstract": "Comprehensive market map of content monetization approaches. Compares 15 platforms across ad revenue, subscription models, and emerging micropayment infrastructure.",
+          "keywords": ["monetization", "market-map", "comparison", "micropayments"],
+          "wordCount": 2100
+        },
+        "qualitySignals": {
+          "publishedDate": "2026-05-10",
+          "citationCount": 6,
+          "publisherVerified": true,
+          "dataFreshness": "17d",
+          "methodology": "market-research"
+        }
+      }
+    ]
+  }
+}

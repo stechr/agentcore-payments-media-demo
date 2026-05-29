@@ -1,0 +1,11 @@
+{
+  "article": {
+    "title": "The Agent-Publisher Economic Model: Why x402 Changes Everything",
+    "author": "Dr. Marcus Webb, Chief Economist",
+    "publishedDate": "2026-05-24",
+    "merchant": "thornwick",
+    "content": "The emergence of AI agents as content consumers creates a fundamentally new demand curve for publisher content. Unlike human readers who are attention-constrained and ad-tolerant, agents are budget-constrained and utility-maximizing.\n\nThis paper presents a first-principles economic model of the agent-publisher relationship:\n\n1. THE NEW DEMAND CURVE: Human demand for content follows attention economics — willingness to pay is bounded by time and ad tolerance. Agent demand follows utility economics — willingness to pay is bounded by task value and budget allocation.\n\n2. PRICING THEORY: Optimal agent pricing differs from human pricing. For humans: maximize engagement × ad impressions. For agents: maximize (content utility / price) × volume. This suggests lower per-unit prices but dramatically higher volume.\n\n3. GAME THEORY OF PRICING: In a multi-merchant environment, agents will comparison-shop. Publishers face a prisoner's dilemma: race to the bottom on price, or differentiate on quality. Our model shows quality differentiation is the Nash equilibrium — agents that optimize for quality-adjusted price reward premium publishers.\n\n4. TRANSITION DYNAMICS: Publishers currently earn $2-8 CPM from ads. x402 micropayments at $0.003-0.015/article can match or exceed ad revenue when agent traffic reaches 15-20% of total visits. We model the crossover point for different publisher archetypes.\n\n5. IMPLICATIONS: The x402 model creates a positive feedback loop — publishers that invest in quality attract more agent traffic, which funds more quality investment. This is the opposite of the ad-supported race to clickbait.\n\nConclusion: x402 micropayments don't just add a revenue stream — they fundamentally realign publisher incentives from attention-capture to utility-delivery.",
+    "wordCount": 2800,
+    "methodology": "theoretical-modeling"
+  }
+}

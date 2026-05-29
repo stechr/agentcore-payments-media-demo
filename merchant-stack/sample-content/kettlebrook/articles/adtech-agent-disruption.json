@@ -1,0 +1,11 @@
+{
+  "article": {
+    "title": "How AI Agents Are Disrupting the AdTech Stack",
+    "author": "James Park, Research Director",
+    "publishedDate": "2026-05-18",
+    "merchant": "kettlebrook",
+    "content": "The rise of AI agent traffic is creating structural challenges for the advertising technology stack. When 20%+ of site visitors don't render ads, the entire programmatic ecosystem faces disruption.\n\nImpact Analysis:\n\n1. DSP DISRUPTION: Demand-side platforms bid on impressions that agents never see. Early data suggests 8-12% of programmatic spend is wasted on agent traffic that doesn't render creatives.\n\n2. SSP ADAPTATION: Supply-side platforms are beginning to differentiate between human and agent traffic. Some now offer 'agent-aware' inventory that excludes bot impressions from ad auctions.\n\n3. PUBLISHER RESPONSE: Forward-thinking publishers are implementing dual monetization — ads for humans, x402 micropayments for agents. This requires traffic classification at the edge (typically via CloudFront + Lambda@Edge or similar CDN-level logic).\n\n4. MEASUREMENT CRISIS: Attribution models built for human behavior break down with agent traffic. Agents don't click ads, don't convert on landing pages, and don't have cookies. The industry needs new measurement frameworks.\n\n5. OPPORTUNITY: Publishers who successfully monetize agent traffic via micropayments may actually earn MORE per agent visit than per human visit, given the elimination of ad tech intermediary fees (typically 40-60% of gross ad revenue).\n\nRecommendation: Publishers should implement traffic classification and dual monetization within the next 6 months. The window for competitive advantage is closing as more publishers adopt x402.",
+    "wordCount": 1600,
+    "methodology": "industry-analysis"
+  }
+}

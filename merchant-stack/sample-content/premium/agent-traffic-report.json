@@ -1,0 +1,11 @@
+{
+  "id": "agent-traffic-report",
+  "title": "Agent Traffic Report: 23% of News Site Visits Now Come from AI Systems",
+  "author": "DataTech Research Team",
+  "published": "2026-05-22",
+  "tier": "premium",
+  "price_usdc": 0.01,
+  "word_count": 1600,
+  "summary": "Comprehensive analysis of AI agent traffic patterns across 200+ news sites. Agent visits grew 8x in 12 months, with research agents dominating at 61% of agent traffic.",
+  "content": "AI Agent Traffic Analysis — May 2026\n\nMethodology: Analysis of server logs from 214 news and media websites, representing 4.2B monthly page views. Agent identification via User-Agent strings, behavioral patterns (request timing, navigation paths), and x402 payment headers.\n\nHeadline Numbers:\n- 23% of all visits now come from AI agents (up from 3% in May 2025)\n- 61% are research/analysis agents (enterprise tools gathering information)\n- 24% are content aggregation agents (building summaries, newsletters)\n- 11% are monitoring agents (tracking topics, competitors, mentions)\n- 4% are commerce agents (price comparison, product research)\n\nTraffic Patterns:\n- Agent traffic peaks at 02:00-06:00 UTC (off-peak for humans, optimal for batch processing)\n- Average agent session: 12 pages in 4.2 seconds (vs. human: 3.1 pages in 4.5 minutes)\n- Agent bounce rate: 89% on paywalled content (vs. 34% for humans)\n- Agent conversion on x402-enabled sites: 72% (agents that encounter a 402 and have budget will pay)\n\nRevenue Impact:\n- Sites with x402: $0.004 average revenue per agent visit\n- Sites without x402: $0.00 per agent visit (100% unmonetized)\n- Top-performing publisher: $47,000/month from agent payments alone (financial data provider)\n- Median publisher with x402: $3,200/month from agent payments\n\nAgent Identity Distribution:\n- Enterprise research tools (dedicated search agents, custom corporate agents): 41%\n- Developer tools (code assistants accessing docs): 18%\n- Marketing/SEO agents: 14%\n- Financial analysis agents: 12%\n- Academic research agents: 9%\n- Other/unidentified: 6%\n\nKey Insight: The 72% conversion rate on x402-enabled sites proves that agents WILL pay when given the option. The current 89% bounce rate on paywalled sites represents pure lost revenue — these agents have budgets and willingness to pay, but no mechanism to do so."
+}

@@ -1,0 +1,46 @@
+{
+  "catalog": {
+    "name": "Thornwick Research",
+    "merchantId": "thornwick",
+    "articles": [
+      {
+        "id": "agent-publisher-economics",
+        "path": "/thornwick/premium/agent-publisher-economics.json",
+        "tier": "premium",
+        "price": 0.008,
+        "preview": {
+          "title": "The Agent-Publisher Economic Model: Why x402 Changes Everything",
+          "abstract": "First-principles analysis of how autonomous AI agents create a new demand curve for publisher content. Models the transition from human-attention-based pricing to machine-utility-based pricing. Includes game theory analysis of optimal pricing strategies.",
+          "keywords": ["agent-economics", "x402", "pricing-theory", "publisher-strategy"],
+          "wordCount": 2800
+        },
+        "qualitySignals": {
+          "publishedDate": "2026-05-24",
+          "citationCount": 2,
+          "publisherVerified": true,
+          "dataFreshness": "3d",
+          "methodology": "theoretical-modeling"
+        }
+      },
+      {
+        "id": "trust-signals-agentic-web",
+        "path": "/thornwick/articles/trust-signals-agentic-web.json",
+        "tier": "standard",
+        "price": 0.005,
+        "preview": {
+          "title": "Trust Signals for the Agentic Web: How Agents Evaluate Content Providers",
+          "abstract": "Emerging patterns in how AI agents decide which paid APIs and content sources to trust. Covers reputation systems, quality verification, and the role of on-chain transaction history.",
+          "keywords": ["trust", "reputation", "agent-decisions", "quality-verification"],
+          "wordCount": 1900
+        },
+        "qualitySignals": {
+          "publishedDate": "2026-05-26",
+          "citationCount": 0,
+          "publisherVerified": true,
+          "dataFreshness": "1d",
+          "methodology": "industry-analysis"
+        }
+      }
+    ]
+  }
+}

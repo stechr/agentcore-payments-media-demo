@@ -1,0 +1,11 @@
+{
+  "id": "ai-content-moderation",
+  "title": "AI Content Moderation: How Publishers Are Scaling Trust & Safety",
+  "author": "James Okafor",
+  "published": "2026-05-19",
+  "tier": "standard",
+  "price_usdc": 0.003,
+  "word_count": 1100,
+  "summary": "Publishers are deploying multi-agent moderation systems that combine speed with nuance, reducing false positives by 73% compared to single-model approaches.",
+  "content": "Content moderation at scale has always been a tradeoff: speed vs. accuracy, automation vs. nuance. But a new generation of multi-agent moderation systems is breaking that tradeoff.\n\nThe pattern emerging across major publishers: instead of one monolithic classifier, deploy a team of specialized agents — one for toxicity, one for misinformation, one for copyright, one for context — and let them deliberate.\n\nResults from early adopters:\n- GlobalWire News: 73% reduction in false positives after switching to multi-agent moderation\n- Birchline Media: Moderation latency dropped from 4.2 seconds to 0.8 seconds per piece\n- Kettledrum Press: Human escalation rate dropped from 12% to 3.1% of flagged content\n\nThe architecture is surprisingly consistent across implementations: a fast first-pass agent (cheap model, high recall) flags potential issues, then specialist agents (expensive models, high precision) evaluate only the flagged content. A final arbiter agent weighs the specialist opinions and makes the call.\n\nCost structure: approximately $0.002 per piece of content moderated — down from $0.15 for human review. At scale (millions of pieces/day), this represents 98.7% cost reduction while maintaining or improving accuracy.\n\nThe remaining challenge: adversarial content specifically designed to fool AI moderators. Early evidence suggests that multi-agent systems are more robust to adversarial attacks than single-model systems — an attack that fools one specialist rarely fools all of them."
+}

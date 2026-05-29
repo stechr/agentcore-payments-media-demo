@@ -1,0 +1,65 @@
+{
+  "catalog": {
+    "name": "Copperview",
+    "merchantId": "copperview",
+    "articles": [
+      {
+        "id": "agent-traffic-overview",
+        "path": "/copperview/articles/agent-traffic-overview.json",
+        "tier": "standard",
+        "price": 0.001,
+        "preview": {
+          "title": "AI Agents Are Visiting News Sites More",
+          "abstract": "Quick overview of AI agent traffic trends based on publicly available data.",
+          "keywords": ["agent-traffic", "news-sites"],
+          "wordCount": 450
+        },
+        "qualitySignals": {
+          "publishedDate": "2026-04-10",
+          "citationCount": 0,
+          "publisherVerified": false,
+          "dataFreshness": "47d",
+          "methodology": "secondary-aggregation"
+        }
+      },
+      {
+        "id": "streaming-metrics-basic",
+        "path": "/copperview/data/streaming-metrics-basic.json",
+        "tier": "data",
+        "price": 0.002,
+        "preview": {
+          "title": "Streaming Platform Metrics — Basic Feed",
+          "abstract": "Monthly subscriber counts and churn rates for top 10 streaming platforms.",
+          "keywords": ["streaming", "metrics", "subscribers"],
+          "wordCount": 200
+        },
+        "qualitySignals": {
+          "publishedDate": "2026-04-30",
+          "citationCount": 1,
+          "publisherVerified": false,
+          "dataFreshness": "27d",
+          "methodology": "public-data-scraping"
+        }
+      },
+      {
+        "id": "publisher-revenue-summary",
+        "path": "/copperview/articles/publisher-revenue-summary.json",
+        "tier": "standard",
+        "price": 0.001,
+        "preview": {
+          "title": "Publisher Revenue: Ads vs Subscriptions vs Micropayments",
+          "abstract": "Brief comparison of publisher revenue models. Based on industry reports.",
+          "keywords": ["publisher-revenue", "ads", "subscriptions"],
+          "wordCount": 600
+        },
+        "qualitySignals": {
+          "publishedDate": "2026-05-01",
+          "citationCount": 0,
+          "publisherVerified": false,
+          "dataFreshness": "26d",
+          "methodology": "opinion-piece"
+        }
+      }
+    ]
+  }
+}

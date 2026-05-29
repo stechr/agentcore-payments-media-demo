@@ -1,0 +1,17 @@
+[project]
+name = "agentcore-payments-demo-ui"
+version = "0.1.0"
+description = "AgentCore Payments research agent with AG-UI frontend"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+  "ag-ui-protocol==0.1.18",
+  "fastapi>=0.115.12",
+  "uvicorn>=0.34.3",
+  "strands-agents>=1.18.0",
+  "strands-agents-tools>=0.2.16",
+  "ag_ui_strands>=0.1.9",
+  "copilotkit>=0.1.87",
+  "python-dotenv>=1.0.0,<2.0.0",
+  "pydantic>=2.0.0,<3.0.0",
+  "bedrock-agentcore[ag-ui,strands-agents]>=1.11.0",
+]

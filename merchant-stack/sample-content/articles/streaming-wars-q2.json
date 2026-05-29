@@ -1,0 +1,11 @@
+{
+  "id": "streaming-wars-q2",
+  "title": "Streaming Wars Q2 2026: Who's Winning the Attention Economy",
+  "author": "Sarah Chen",
+  "published": "2026-05-20",
+  "tier": "standard",
+  "price_usdc": 0.003,
+  "word_count": 1200,
+  "summary": "FlickHaven regains subscriber momentum while LumiVault pivots to ad-supported tiers. Meanwhile, a new class of AI-curated content platforms is emerging.",
+  "content": "The streaming landscape in Q2 2026 looks fundamentally different from even a year ago. FlickHaven's decision to embrace AI-powered content recommendations at the individual scene level — not just show recommendations — has driven a 12% increase in average viewing time per session.\n\nLumiVault has fully committed to its ad-supported tier, which now accounts for 67% of new subscribers in North America. The premium ad-free tier is increasingly positioned as a luxury product.\n\nBut the real disruption is coming from AI-native platforms. Three startups — Curio, Synthwave, and NarrativeAI — have collectively raised $2.1B to build platforms where content is dynamically assembled from licensed components based on viewer preferences. A viewer might get a documentary that combines footage from multiple studios, narrated in their preferred style, at their preferred depth.\n\nFor traditional media companies, this raises an existential question: if AI can assemble better content experiences from your raw footage, are you a studio or a stock library?\n\nKey metrics this quarter:\n- FlickHaven: 312M subscribers (+4.2% QoQ), ARPU $14.82\n- LumiVault: 178M subscribers (+1.8% QoQ), 67% ad-supported\n- AI-native platforms: 23M combined MAU (from 0 eighteen months ago)\n- Average US household streaming subscriptions: 4.1 (down from 4.7 peak)\n\nThe consolidation we predicted is happening — but not through M&A. It's happening through AI intermediaries that aggregate content across platforms for the viewer."
+}

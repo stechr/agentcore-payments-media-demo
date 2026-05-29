@@ -1,0 +1,15 @@
+{
+  "id": "streaming-metrics-feed",
+  "title": "Real-Time Streaming Platform Metrics (Updated Hourly)",
+  "tier": "data",
+  "price_usdc": 0.005,
+  "updated": "2026-05-27T11:00:00Z",
+  "format": "structured",
+  "metrics": {
+    "flickhaven": { "concurrent_viewers_m": 48.2, "top_title": "Dark Signals S6", "churn_rate_pct": 2.1 },
+    "lumivault": { "concurrent_viewers_m": 22.7, "top_title": "Nebula Knights: Legacy", "churn_rate_pct": 3.4 },
+    "cinetrail": { "concurrent_viewers_m": 31.5, "top_title": "The Asset List S3", "churn_rate_pct": 1.8 },
+    "pebbletv": { "concurrent_viewers_m": 8.9, "top_title": "Partition S3", "churn_rate_pct": 2.9 },
+    "ai_native_platforms": { "concurrent_viewers_m": 4.1, "top_title": "Personalized Documentary", "churn_rate_pct": 5.2 }
+  }
+}

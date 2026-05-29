@@ -1,0 +1,43 @@
+---
+title: System Architecture
+---
+graph TB
+    subgraph Publisher["Publisher Layer - AWS"]
+        S3[S3 Content Bucket]
+        CF[CloudFront]
+        LE[Lambda at Edge - x402 Paywall]
+        TR[Trust Registry - API Gateway + Lambda]
+        FB[Feedback Service - API Gateway + Lambda]
+
+        S3 --> CF
+        CF --> LE
+    end
+
+    subgraph Agent["Agent Layer"]
+        SA[Strands Agent + Decision Framework]
+        Plugin[AgentCore Payments Plugin]
+        PM[Payment Manager]
+        PC[Coinbase CDP Connector]
+        PI[Embedded Wallet - USDC]
+        PS[Payment Session - Budget 1.00 USD]
+
+        SA --> Plugin
+        Plugin --> PM
+        PM --> PC
+        PM --> PI
+        PM --> PS
+    end
+
+    subgraph Chain["Blockchain Layer"]
+        Base[Base Sepolia L2 - Testnet]
+        USDC[USDC Token Contract]
+        Base --- USDC
+    end
+
+    SA -->|"1. GET catalog - free"| CF
+    CF -->|"2. HTTP 402 + price"| SA
+    Plugin -->|"3. Sign EIP-3009"| Base
+    SA -->|"4. GET + X-PAYMENT"| CF
+    CF -->|"5. 200 + content"| SA
+    SA -->|"Trust check"| TR
+    SA -->|"Rate content"| FB
