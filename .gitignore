@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# Build outputs
+.next/
+cdk.out/
+dist/
+*.js.map
+
+# Environment and credentials
+.env
+.env.local
+.cdp_api_key.json
+.cdp_wallet_secret.txt
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Demo recordings (generated, not committed)
+demo/recording/
+demo/demo-final.mp4
+demo/demo-video*.webm
+demo/voiceover.mp3
+
+# Locks (regenerate on install)
+package-lock.json
+uv.lock
+
+# Additional generated files
+.DS_Store
+uv.lock
+next-env.d.ts
+*.egg-info/

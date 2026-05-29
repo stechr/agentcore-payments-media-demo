@@ -1,0 +1,32 @@
+{
+  "merchants": {
+    "mediatech-daily": {
+      "name": "MediaTech Daily",
+      "description": "Premium media industry intelligence — primary research and deep analysis",
+      "pricing": {"standard": 0.008, "premium": 0.015, "data": 0.012},
+      "verified": true,
+      "established": "2023-03-15"
+    },
+    "copperview": {
+      "name": "Copperview",
+      "description": "Aggregated media metrics and quick-take analysis",
+      "pricing": {"standard": 0.001, "premium": 0.003, "data": 0.002},
+      "verified": false,
+      "established": "2024-11-01"
+    },
+    "thornwick": {
+      "name": "Thornwick Research",
+      "description": "Emerging media technology research — AI-native publisher analytics",
+      "pricing": {"standard": 0.005, "premium": 0.008, "data": 0.006},
+      "verified": true,
+      "established": "2026-02-10"
+    },
+    "kettlebrook": {
+      "name": "Kettlebrook Analytics",
+      "description": "Cross-industry research covering media, adtech, and digital commerce",
+      "pricing": {"standard": 0.004, "premium": 0.006, "data": 0.005},
+      "verified": true,
+      "established": "2024-06-20"
+    }
+  }
+}

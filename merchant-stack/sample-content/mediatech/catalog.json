@@ -1,0 +1,67 @@
+{
+  "catalog": {
+    "name": "MediaTech Daily",
+    "merchantId": "mediatech-daily",
+    "articles": [
+      {
+        "id": "agent-traffic-report-q2",
+        "path": "/mediatech/premium/agent-traffic-report-q2.json",
+        "tier": "premium",
+        "price": 0.015,
+        "preview": {
+          "title": "Agent Traffic Report: 23% of News Site Visits Now From AI",
+          "abstract": "Analysis of 500M page views across 200 publishers reveals AI agent traffic grew from 8% to 23% in 6 months. Top finding: agents that pay via x402 have 3x higher content completion rates than scrapers. Includes publisher revenue impact modeling.",
+          "keywords": ["agent-traffic", "publisher-analytics", "x402-adoption", "revenue-modeling"],
+          "wordCount": 2400
+        },
+        "qualitySignals": {
+          "publishedDate": "2026-05-20",
+          "citationCount": 12,
+          "publisherVerified": true,
+          "dataFreshness": "7d",
+          "methodology": "primary-research",
+          "sampleSize": "500M page views, 200 publishers"
+        }
+      },
+      {
+        "id": "publisher-revenue-micropayments",
+        "path": "/mediatech/premium/publisher-revenue-micropayments.json",
+        "tier": "premium",
+        "price": 0.015,
+        "preview": {
+          "title": "Publisher Revenue Deep Dive: The Micropayment Opportunity",
+          "abstract": "Detailed financial modeling of micropayment revenue streams for publishers. Compares ad revenue ($2-8 CPM), subscriptions ($10-30/mo), and x402 micropayments ($0.003-0.01/article). Includes break-even analysis and 3-year projections.",
+          "keywords": ["publisher-revenue", "micropayments", "financial-modeling", "CPM-comparison"],
+          "wordCount": 3100
+        },
+        "qualitySignals": {
+          "publishedDate": "2026-05-15",
+          "citationCount": 8,
+          "publisherVerified": true,
+          "dataFreshness": "12d",
+          "methodology": "financial-modeling",
+          "sampleSize": "50 publishers, 12-month data"
+        }
+      },
+      {
+        "id": "streaming-wars-q2",
+        "path": "/mediatech/articles/streaming-wars-q2.json",
+        "tier": "standard",
+        "price": 0.008,
+        "preview": {
+          "title": "Streaming Wars Q2 2026: Platform Consolidation Accelerates",
+          "abstract": "Three major mergers reshape the streaming landscape. Analysis of subscriber migration patterns and content licensing implications for media companies.",
+          "keywords": ["streaming", "M&A", "subscriber-churn", "content-licensing"],
+          "wordCount": 1800
+        },
+        "qualitySignals": {
+          "publishedDate": "2026-05-22",
+          "citationCount": 5,
+          "publisherVerified": true,
+          "dataFreshness": "5d",
+          "methodology": "industry-analysis"
+        }
+      }
+    ]
+  }
+}

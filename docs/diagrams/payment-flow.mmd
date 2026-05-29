@@ -1,0 +1,27 @@
+---
+title: x402 Payment Flow
+---
+sequenceDiagram
+    participant Agent as 🤖 Research Agent
+    participant Plugin as AgentCore Plugin
+    participant CF as ☁️ CloudFront + Lambda@Edge
+    participant Chain as ⛓️ Base Sepolia (L2)
+
+    Agent->>CF: GET /mediatech/premium/article.json
+    CF-->>Agent: 402 Payment Required<br/>{x402Version, accepts, pricing}
+
+    Note over Agent,Plugin: Plugin intercepts 402 automatically
+
+    Plugin->>Plugin: Validate budget<br/>(session limit check)
+    Plugin->>Chain: Sign EIP-3009<br/>transferWithAuthorization
+
+    Note over Plugin,Chain: ~3 second wait for block confirmation
+
+    Plugin->>CF: GET + X-PAYMENT header<br/>(base64 signed proof)
+    CF->>Chain: Verify payment proof
+    Chain-->>CF: ✅ Confirmed
+    CF-->>Agent: 200 + article content
+
+    Note over Agent: Agent reads content,<br/>synthesizes research brief
+
+    Agent->>Agent: Rate content quality

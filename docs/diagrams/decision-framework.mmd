@@ -1,0 +1,31 @@
+---
+title: Agent Decision Framework
+---
+flowchart TD
+    Start([Discover Article]) --> Trust
+
+    Trust{{"1️⃣ Trust Check<br/>Query Trust Registry"}}
+    Trust -->|"score > 4.0"| TrustOK[✅ PROCEED]
+    Trust -->|"2.5 – 4.0"| TrustCaution[⚠️ CAUTION]
+    Trust -->|"< 2.5"| Skip[❌ SKIP]
+    Trust -->|"null (new)"| Trial[🔍 TRIAL<br/>max 1 article]
+
+    TrustOK --> Relevance
+    TrustCaution --> Relevance
+    Trial --> Relevance
+
+    Relevance{{"2️⃣ Relevance Check<br/>Keywords + abstract"}}
+    Relevance -->|"High"| Quality
+    Relevance -->|"Medium"| Quality
+    Relevance -->|"Low"| Skip
+
+    Quality{{"3️⃣ Quality Signals<br/>Freshness, citations, methodology"}}
+    Quality --> CostBenefit
+
+    CostBenefit{{"4️⃣ Cost-Benefit<br/>quality_adjusted_price = price / (trust/5)"}}
+    CostBenefit -->|"Within budget<br/>best value"| Buy[✅ BUY]
+    CostBenefit -->|"Cheaper alternative<br/>exists"| Skip
+    CostBenefit -->|">30% of remaining budget"| Skip
+
+    Buy --> Purchase([💳 Purchase via x402])
+    Purchase --> Rate([⭐ Rate Content])
