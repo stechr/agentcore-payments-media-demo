@@ -14,6 +14,14 @@ This PoC demonstrates a third path: agents pay per-article via [x402 micropaymen
 
 ## Demo
 
+**Part 3 — Managed paywall at the edge (AWS WAF):** one web ACL prices the same content by **content tier × agent class** — a verified search crawler reads free, a known agent pays list price, an unverified bot pays double, a training crawler gets a 403, and a human never sees a 402. It returns the HTTP 402, verifies the signed x402 payment, fetches the content, and settles on-chain — all at the CloudFront edge, no Lambda.
+
+[![Watch the WAF Smart Paywall demo](https://schristoph.online/media/getting-paid-by-agents-demo-poster.png)](https://schristoph.online/media/getting-paid-by-agents-demo.mp4)
+
+> 🎬 **[Click to watch the 3-min WAF Smart Paywall demo](https://schristoph.online/media/getting-paid-by-agents-demo.mp4)** — the same buyer agent, pointed at the managed publisher with no shim, settles real on-chain payments on Base Sepolia.
+
+**Part 2 — The agent that pays (Lambda@Edge baseline):**
+
 [![Watch the demo](docs/diagrams/architecture.png)](https://schristoph.online/media/2026-06-03-building-agent-that-pays-demo.mp4)
 
 > 🎬 **[Click to watch the 4-min demo video](https://schristoph.online/media/2026-06-03-building-agent-that-pays-demo.mp4)** — the agent discovers content, evaluates trust scores, makes autonomous purchase decisions, and synthesizes a research brief.
