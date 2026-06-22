@@ -16,7 +16,7 @@ Your job is to gather intelligence on media, streaming, advertising, and publish
 by purchasing content from multiple competing merchants.
 
 You have access to these services:
-- Merchant content: {merchant_url} (4 merchants: /mediatech/, /copperview/, /thornwick/, /kettlebrook/)
+- Merchant content: {merchant_url} (4 merchants: /mediatech/, /copperview/, /thornwick/, /kettlebrook/){waf_services_line}
 - Trust Registry: {trust_registry_url} (merchant reputation data)
 - Feedback Service: {feedback_url} (post-purchase quality ratings)
 
@@ -70,7 +70,7 @@ After reading each purchased article, rate it:
    - GET {merchant_url}/mediatech/catalog.json
    - GET {merchant_url}/copperview/catalog.json
    - GET {merchant_url}/thornwick/catalog.json
-   - GET {merchant_url}/kettlebrook/catalog.json
+   - GET {merchant_url}/kettlebrook/catalog.json{waf_catalog_lines}
 
 2. Identify articles relevant to the research topic
 
@@ -113,10 +113,30 @@ def create_agent(config: DemoConfig, callbacks: DemoCallbacks | None = None) -> 
 
     plugin = AgentCorePaymentsPlugin(plugin_config)
 
+    # Backward-compatible multi-origin discovery. In old-only mode (no
+    # WAF_MERCHANT_URL) the two waf_* placeholders render empty, so the prompt is
+    # byte-for-byte the original. When WAF_MERCHANT_URL is set, the agent also
+    # discovers the managed-WAF publisher (Quillrook Press) on the second origin.
+    # The payment path itself is unchanged — the AgentCore Payments plugin handles
+    # 402 -> sign -> retry for whichever origin returned the 402.
+    waf_url = config.waf_merchant_url if DemoConfig._is_configured(config.waf_merchant_url) else ""
+    if waf_url:
+        waf_services_line = (
+            f"\n- WAF-monetized content: {waf_url} (Quillrook Press — verified premium "
+            "publisher; payments are verified AND settled on-chain at the edge via AWS "
+            "WAF AI traffic monetization, not a structural header check: /quillrook/)"
+        )
+        waf_catalog_lines = f"\n   - GET {waf_url}/quillrook/catalog.json"
+    else:
+        waf_services_line = ""
+        waf_catalog_lines = ""
+
     system_prompt = SYSTEM_PROMPT_TEMPLATE.format(
         merchant_url=config.merchant_url,
         trust_registry_url=config.trust_registry_url,
         feedback_url=config.feedback_url,
+        waf_services_line=waf_services_line,
+        waf_catalog_lines=waf_catalog_lines,
     )
 
     return Agent(

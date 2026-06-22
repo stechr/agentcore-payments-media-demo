@@ -1,0 +1,12 @@
+{
+  "article": {
+    "title": "Edge-Settled Payments: What Verified On-Chain Settlement Means for Publishers",
+    "author": "Imogen Vale, Markets Desk",
+    "publishedDate": "2026-06-16",
+    "merchant": "quillrook-press",
+    "content": "For two years, most agent paywalls did one thing well and one thing badly. They returned a clean HTTP 402 with a price and a wallet address — and then waved the agent through the moment a payment header merely looked well-formed. No funds moved. No settlement was confirmed. The paywall was, in effect, a polite suggestion.\n\nEdge-settled payments close that gap. When an agent requests a monetized resource, the edge returns a 402 Payment Required with the price, accepted networks, and the publisher wallet. The agent signs an authorization and resubmits. This time the edge verifies the signed authorization, fetches the origin only on success, and settles the payment on-chain through a facilitator before the bytes are served. If the origin fails (4xx/5xx), no settlement occurs and the agent is not charged.\n\nThree consequences matter for publishers. First, revenue is real: a served premium article corresponds to a confirmed on-chain transfer, not an unverified header. Second, replay is contained: authorizations are single-use, and a payment-identifier extension lets honest clients retry without double-paying for a short window. Third, the publisher carries no verification code of its own — the verify-fetch-settle loop runs at the edge, not in a hand-rolled function the publisher must maintain and secure.\n\nThe trade-off is control. A DIY function can encode arbitrary business logic; a managed edge action encodes a fixed, audited protocol. For publishers whose differentiator is content rather than payment plumbing, that trade is usually the right one.",
+    "wordCount": 1500,
+    "methodology": "industry-analysis",
+    "sampleSize": "n/a"
+  }
+}

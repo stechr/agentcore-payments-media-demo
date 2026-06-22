@@ -9,12 +9,12 @@ import sys
 from pathlib import Path
 
 # Add project root to path for core/ imports
-sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from dotenv import load_dotenv
 
 # Load environment
-_project_root = Path(__file__).parent.parent
+_project_root = Path(__file__).parent.parent.parent
 load_dotenv(_project_root / "agent" / ".env")
 load_dotenv(_project_root / ".env")
 
@@ -44,10 +44,24 @@ _plugin_config = AgentCorePaymentsPluginConfig(
 )
 _plugin = AgentCorePaymentsPlugin(_plugin_config)
 
+_waf_url = _config.waf_merchant_url if _config.__class__._is_configured(_config.waf_merchant_url) else ""
+if _waf_url:
+    _waf_services_line = (
+        f"\n- WAF-monetized content: {_waf_url} (Quillrook Press — verified premium "
+        "publisher; payments are verified AND settled on-chain at the edge via AWS "
+        "WAF AI traffic monetization, not a structural header check: /quillrook/)"
+    )
+    _waf_catalog_lines = f"\n   - GET {_waf_url}/quillrook/catalog.json"
+else:
+    _waf_services_line = ""
+    _waf_catalog_lines = ""
+
 _system_prompt = SYSTEM_PROMPT_TEMPLATE.format(
     merchant_url=_config.merchant_url,
     trust_registry_url=_config.trust_registry_url,
     feedback_url=_config.feedback_url,
+    waf_services_line=_waf_services_line,
+    waf_catalog_lines=_waf_catalog_lines,
 )
 
 _agent = Agent(

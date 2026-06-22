@@ -1,0 +1,14 @@
+title = "agentcore-payments-media-demo gitleaks config"
+
+# Inherit gitleaks' default rule set.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Public testnet / non-secret values that are safe to commit"
+regexes = [
+  # Base Sepolia USDC token contract (public, well-known testnet asset)
+  '''0x036CbD53842c5426634e7929541eC2318f3dCF7e''',
+  # Placeholder account ID used in docs/examples
+  '''123456789012''',
+]

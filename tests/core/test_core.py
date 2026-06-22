@@ -64,6 +64,41 @@ class TestConfig:
 
         assert "from-file" in config.payment_manager_arn
 
+    def _base_env(self, monkeypatch):
+        monkeypatch.setenv("PAYMENT_MANAGER_ARN", "arn:aws:bedrock-agentcore:us-east-1:123:payment-manager/m")
+        monkeypatch.setenv("PAYMENT_INSTRUMENT_ID", "inst")
+        monkeypatch.setenv("PAYMENT_SESSION_ID", "sess")
+
+    def test_mode_old_only(self, monkeypatch):
+        """Only MERCHANT_URL set -> only the Lambda publisher is discovered (no regression)."""
+        self._base_env(monkeypatch)
+        monkeypatch.setenv("MERCHANT_URL", "https://old.example.com")
+        monkeypatch.delenv("WAF_MERCHANT_URL", raising=False)
+        from core.config import load_config
+        urls = load_config().active_merchant_urls()
+        assert urls == {"merchant": "https://old.example.com"}
+
+    def test_mode_new_only(self, monkeypatch):
+        """Only WAF_MERCHANT_URL set -> only the WAF publisher is discovered."""
+        self._base_env(monkeypatch)
+        monkeypatch.delenv("MERCHANT_URL", raising=False)  # falls back to placeholder
+        monkeypatch.setenv("WAF_MERCHANT_URL", "https://waf.example.com")
+        from core.config import load_config
+        urls = load_config().active_merchant_urls()
+        assert urls == {"waf_merchant": "https://waf.example.com"}
+
+    def test_mode_both(self, monkeypatch):
+        """Both URLs set -> agent discovers across both distributions."""
+        self._base_env(monkeypatch)
+        monkeypatch.setenv("MERCHANT_URL", "https://old.example.com")
+        monkeypatch.setenv("WAF_MERCHANT_URL", "https://waf.example.com")
+        from core.config import load_config
+        urls = load_config().active_merchant_urls()
+        assert urls == {
+            "merchant": "https://old.example.com",
+            "waf_merchant": "https://waf.example.com",
+        }
+
 
 class TestAgentFactory:
     """Tests for core/agent.py — SYSTEM_PROMPT_TEMPLATE only (no strands import needed)."""

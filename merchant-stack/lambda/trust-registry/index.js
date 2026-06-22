@@ -53,6 +53,18 @@ const MERCHANTS = {
     warnings: ["occasional-stale-data"],
     summary: "Mid-tier research provider. Generally reliable but occasionally delivers outdated content. Good value at price point when freshness is not critical.",
   },
+  "quillrook-press": {
+    merchantId: "quillrook-press",
+    name: "Quillrook Press",
+    trustScore: 4.9,
+    totalTransactions: 64,
+    disputeRate: 0.0,
+    avgRating: 4.9,
+    ratingBreakdown: { "5": 58, "4": 5, "3": 1, "2": 0, "1": 0 },
+    recentRatings: [5, 5, 5, 4, 5, 5, 5, 5, 5, 5],
+    badges: ["verified-publisher", "edge-settled", "on-chain-verified", "consistent-quality"],
+    summary: "Premium publisher whose payments are verified and settled on-chain at the edge (AWS WAF AI traffic monetization) rather than via a structural header check. Zero disputes — every served response corresponds to a confirmed on-chain settlement. Recommended for high-value tasks where payment integrity matters.",
+  },
 };
 
 exports.handler = async (event) => {

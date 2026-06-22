@@ -1,0 +1,44 @@
+{
+  "catalog": {
+    "name": "Quillrook Press",
+    "description": "Verified premium publisher — payments verified and settled on-chain at the edge via AWS WAF AI traffic monetization (x402). No structural-only shortcuts. Smart paywall: differentiated pricing by content tier AND agent class.",
+    "settlement": "edge-managed",
+    "verification": "on-chain",
+    "license": {
+      "standard": "RSL (Really Simple Licensing)",
+      "url": "/quillrook/license.xml",
+      "discovery": ["Link: rel=\"license\" response header", "robots.txt License directive"],
+      "permits": ["read", "inference", "search-indexing"],
+      "prohibits": ["train", "fine-tune", "redistribute"]
+    },
+    "pricing": {
+      "model": "base x content-tier x agent-class (PriceMultiplier on each WAF Monetize rule)",
+      "basePriceUsdc": 0.002,
+      "contentTiers": {
+        "articles": { "pathPrefix": "/articles/", "multiplier": 1, "description": "News & briefings" },
+        "data": { "pathPrefix": "/data/", "multiplier": 3, "description": "Structured datasets" },
+        "premium": { "pathPrefix": "/premium/", "multiplier": 8, "description": "Verified primary research" }
+      },
+      "agentClasses": {
+        "verified-crawler": { "action": "Allow", "classMultiplier": 0, "description": "Free — referral-driving search crawlers" },
+        "known-agent": { "action": "Monetize", "classMultiplier": 1, "description": "Standard — RAG / summarization agents" },
+        "unverified": { "action": "Monetize", "classMultiplier": 2, "description": "Premium — unknown / unverified agents" },
+        "training": { "action": "Block", "classMultiplier": null, "description": "403 — no training on this content" },
+        "human": { "action": "Allow", "classMultiplier": 0, "description": "Pass-through — no 402 for human visitors" }
+      },
+      "effectivePriceMatrixUsdc": {
+        "verified-crawler": { "articles": "free", "data": "free", "premium": "free" },
+        "known-agent": { "articles": 0.002, "data": 0.006, "premium": 0.016 },
+        "unverified": { "articles": 0.004, "data": 0.012, "premium": 0.032 },
+        "training": { "articles": "403", "data": "403", "premium": "403" },
+        "human": { "articles": "pass-through", "data": "pass-through", "premium": "pass-through" }
+      },
+      "note": "Agent class is classified by Bot Control + Web Bot Auth in production; this demo simulates it with a self-asserted `x-demo-agent-class` request header."
+    },
+    "articles": [
+      { "id": "edge-settlement-explained", "path": "/quillrook/articles/edge-settlement-explained.json", "tier": "articles", "tierMultiplier": 1, "title": "Edge-Settled Payments: What Verified On-Chain Settlement Means for Publishers" },
+      { "id": "managed-paywall-economics", "path": "/quillrook/premium/managed-paywall-economics.json", "tier": "premium", "tierMultiplier": 8, "title": "From DIY Paywall to Managed Edge: The Economics of Verified Agent Payments" },
+      { "id": "agent-settlement-feed", "path": "/quillrook/data/agent-settlement-feed.json", "tier": "data", "tierMultiplier": 3, "title": "Verified Agent Settlement Feed: On-Chain Confirmation Latency by Network" }
+    ]
+  }
+}

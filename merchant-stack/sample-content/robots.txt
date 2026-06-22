@@ -1,0 +1,17 @@
+# robots.txt — Quillrook Press (SYNTHETIC demo content)
+#
+# Standard crawl directives PLUS RSL (Really Simple Licensing) discovery. AI
+# agents that support RSL read the License directive during crawl preflight to
+# find the machine-readable usage terms; the same license is also advertised via
+# a CloudFront `Link: rel="license"` response header on every origin response.
+#
+# This file is served from a FREE path so agents can read it without paying.
+
+User-agent: *
+Allow: /
+
+# RSL license discovery (https://rslstandard.org/rsl)
+License: /quillrook/license.xml
+
+# Pay-to-read content tiers are monetized at the edge via AWS WAF AI traffic
+# monetization (x402). Training crawlers are blocked (see license.xml: prohibits train).

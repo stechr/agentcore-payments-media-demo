@@ -1,0 +1,20 @@
+{
+  "article": {
+    "title": "Verified Agent Settlement Feed: On-Chain Confirmation Latency by Network",
+    "author": "Quillrook Data Desk",
+    "publishedDate": "2026-06-16",
+    "merchant": "quillrook-press",
+    "content": "Structured feed of synthetic edge-settlement telemetry. All values illustrative.",
+    "dataset": {
+      "updated": "2026-06-16T00:00:00Z",
+      "currencyMode": "TEST",
+      "networks": [
+        { "chain": "BASE_SEPOLIA", "medianSettleMs": 1850, "p95SettleMs": 4200, "verifyFailRate": 0.004 },
+        { "chain": "SOLANA_DEVNET", "medianSettleMs": 620, "p95SettleMs": 1400, "verifyFailRate": 0.006 }
+      ],
+      "notes": "Settlement occurs synchronously after a 2xx origin fetch. Failed origins are not charged. Figures are synthetic and for demo use only."
+    },
+    "methodology": "structured-data",
+    "wordCount": 0
+  }
+}

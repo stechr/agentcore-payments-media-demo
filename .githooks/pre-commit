@@ -1,0 +1,9 @@
+#!/bin/bash
+# Pre-commit secret scan. Enable per clone with:
+#   git config core.hooksPath .githooks
+gitleaks protect --staged --no-banner 2>&1
+if [ $? -ne 0 ]; then
+  echo "❌ gitleaks found secrets in staged changes. Commit blocked."
+  echo "   If this is a verified false positive, add its fingerprint to .gitleaksignore."
+  exit 1
+fi

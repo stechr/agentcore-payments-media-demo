@@ -16,12 +16,37 @@ class DemoConfig:
     user_id: str = "researcher001"
     region: str = "us-east-1"
     merchant_url: str = "https://<YOUR_CLOUDFRONT_DOMAIN>"
+    # Optional SECOND publisher gated by the managed AWS WAF "AI traffic
+    # monetization" feature (verifies + settles on-chain at the edge). When set,
+    # the agent discovers it ALONGSIDE merchant_url. Leave unset to behave exactly
+    # as before (old-only mode → zero behavioral change).
+    waf_merchant_url: str = ""
     trust_registry_url: str = "https://<YOUR_TRUST_REGISTRY_URL>"
     feedback_url: str = "https://<YOUR_FEEDBACK_SERVICE_URL>"
     research_topic: str = (
         "How are AI agents changing publisher revenue models, and what role do "
         "micropayments play in the transition from ad-supported to agent-paid content?"
     )
+
+    @staticmethod
+    def _is_configured(url: str) -> bool:
+        """A URL is 'configured' when it is non-empty and not a placeholder."""
+        return bool(url) and "<" not in url
+
+    def active_merchant_urls(self) -> dict[str, str]:
+        """Return the configured merchant base URLs keyed by a stable label.
+
+        Yields the three deployment modes with no agent code changes:
+          - old-only : only MERCHANT_URL set      -> {"merchant": ...}
+          - new-only : only WAF_MERCHANT_URL set   -> {"waf_merchant": ...}
+          - both     : both set                    -> both keys
+        """
+        urls: dict[str, str] = {}
+        if self._is_configured(self.merchant_url):
+            urls["merchant"] = self.merchant_url
+        if self._is_configured(self.waf_merchant_url):
+            urls["waf_merchant"] = self.waf_merchant_url
+        return urls
 
 
 def load_config(env_file: str | Path | None = None) -> DemoConfig:
@@ -37,6 +62,7 @@ def load_config(env_file: str | Path | None = None) -> DemoConfig:
         user_id=os.environ.get("USER_ID", "researcher001"),
         region=os.environ.get("AWS_REGION", "us-east-1"),
         merchant_url=os.environ.get("MERCHANT_URL", "https://<YOUR_CLOUDFRONT_DOMAIN>"),
+        waf_merchant_url=os.environ.get("WAF_MERCHANT_URL", ""),
         trust_registry_url=os.environ.get("TRUST_REGISTRY_URL", "https://<YOUR_TRUST_REGISTRY_URL>"),
         feedback_url=os.environ.get("FEEDBACK_URL", "https://<YOUR_FEEDBACK_SERVICE_URL>"),
         research_topic=os.environ.get("RESEARCH_TOPIC", DemoConfig.research_topic),

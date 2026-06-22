@@ -1,2 +1,3 @@
-f7b62b16a0668103f07f96ad6d27c3fc8c54392e:DESIGN.md:generic-api-key:81
-# USDC testnet contract address on Base Sepolia (public, not a secret)
+# Public Base Sepolia USDC token contract address (well-known testnet asset,
+# not a secret). Documented in DESIGN.md as the settlement asset.
+2b222653fd343ee5a5ceac99b35454298472dd52:DESIGN.md:generic-api-key:81

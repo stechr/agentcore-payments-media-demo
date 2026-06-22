@@ -91,12 +91,12 @@ class TestTrustRegistry:
     """Tests for the trust registry Lambda."""
 
     def test_list_merchants(self):
-        """GET /merchants returns all 4 merchants."""
+        """GET /merchants returns all 5 merchants (4 Lambda + 1 WAF-monetized)."""
         event = {"rawPath": "/merchants", "requestContext": {"http": {"method": "GET"}}}
         result = invoke_lambda("trust-registry", event)
         assert result["statusCode"] == 200
         body = json.loads(result["body"])
-        assert len(body["merchants"]) == 4
+        assert len(body["merchants"]) == 5
 
     def test_merchant_reputation(self):
         """GET /merchants/{id}/reputation returns detailed data."""
@@ -129,6 +129,17 @@ class TestTrustRegistry:
         body = json.loads(result["body"])
         assert body["trustScore"] is None
         assert body["totalTransactions"] == 3
+
+    def test_quillrook_edge_settled(self):
+        """Quillrook Press (WAF-monetized) is high-trust, on-chain/edge-settled."""
+        event = {"rawPath": "/merchants/quillrook-press/reputation", "requestContext": {"http": {"method": "GET"}}}
+        result = invoke_lambda("trust-registry", event)
+        assert result["statusCode"] == 200
+        body = json.loads(result["body"])
+        assert body["trustScore"] == 4.9
+        assert body["disputeRate"] == 0.0
+        assert "edge-settled" in body["badges"]
+        assert "on-chain-verified" in body["badges"]
 
 
 class TestFeedbackService:

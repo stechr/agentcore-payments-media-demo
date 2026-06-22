@@ -6,7 +6,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 REGION="us-east-1"
-MERCHANT_URL="https://dXXXXXXXXXXXXX.cloudfront.net"
+MERCHANT_URL="https://<YOUR_CLOUDFRONT_DOMAIN>"
 
 echo "═══════════════════════════════════════════════════════════"
 echo " AgentCore Payments — Quick Start"
@@ -136,7 +136,7 @@ print(f"    Session: {session_id}")
 env_content = f"""export PAYMENT_MANAGER_ARN={pm_arn}
 export PAYMENT_INSTRUMENT_ID={instrument_id}
 export PAYMENT_SESSION_ID={session_id}
-export MERCHANT_URL=https://dXXXXXXXXXXXXX.cloudfront.net
+export MERCHANT_URL=https://<YOUR_CLOUDFRONT_DOMAIN>
 export AWS_REGION=us-east-1
 """
 env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "agent", ".env")

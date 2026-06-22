@@ -1,0 +1,12 @@
+{
+  "article": {
+    "title": "From DIY Paywall to Managed Edge: The Economics of Verified Agent Payments",
+    "author": "Dr. Rohan Maddox, Chief Economist",
+    "publishedDate": "2026-06-16",
+    "merchant": "quillrook-press",
+    "content": "We modeled the total cost of ownership of three agent-paywall approaches across a synthetic panel of 50 mid-size publishers over twelve months: (A) a hand-rolled edge function performing structural-only header checks, (B) the same function extended with a self-hosted on-chain verification and settlement service, and (C) a managed edge monetization action that verifies and settles on-chain natively.\n\nKey findings:\n\n1. LEAKAGE. Approach A served an estimated 9-14% of premium responses against payment headers that never settled — either malformed-but-plausible proofs or replays. This is pure revenue leakage and is invisible without on-chain reconciliation.\n\n2. ENGINEERING COST. Approach B closed the leakage but added a settlement service, key management, replay protection, and a facilitator integration — a median of 280 engineering hours to build and a recurring on-call burden. Two of the modeled publishers shipped a settlement bug that double-charged honest agents.\n\n3. MANAGED EDGE. Approach C moved verification and settlement to the edge action. Leakage fell to near zero (single-use authorizations, settlement gated on a 2xx origin), engineering cost collapsed to configuration, and replay protection plus idempotency came from the protocol rather than bespoke code.\n\n4. PRICING POWER. Verified settlement let publishers price premium tiers 30-60% higher than structural-only peers, because buyers (agents acting for budget-constrained principals) discounted unverifiable merchants. Trust, made legible by on-chain confirmation, is itself a pricing lever.\n\n5. THE REAL TRADE. The managed approach trades bespoke control for a fixed, audited protocol. Publishers whose moat is content, not payment plumbing, gain; publishers needing exotic settlement logic may still prefer B.\n\nMethodology: synthetic panel, parameters calibrated to public x402 facilitator latency figures and published agent-traffic ratios. All figures illustrative.",
+    "wordCount": 3100,
+    "methodology": "primary-research",
+    "sampleSize": "50 publishers (synthetic panel), 12 months"
+  }
+}

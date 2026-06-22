@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SYNTHETIC RSL (Really Simple Licensing) document for the Smart Paywall demo.
+  RSL is an open standard for machine-readable content licensing
+  (https://rslstandard.org/rsl). AI traffic monetization tells agents HOW MUCH to
+  pay; this document tells them WHAT THEY MAY DO with the content once paid for.
+
+  All terms below are FICTIONAL and for demonstration only. "Quillrook Press" is a
+  made-up publisher. This file is served from a FREE path (/quillrook/license.xml)
+  and is advertised to agents via a CloudFront `Link: rel="license"` response
+  header (see WafMerchantStack RslLinkHeaderPolicy) so an agent can discover and
+  parse the terms before deciding to pay.
+-->
+<rsl xmlns="https://rslstandard.org/rsl">
+  <content url="/quillrook/">
+    <!-- Pay-to-read: usage is licensed per-request via x402 micropayment. -->
+    <license>
+      <permits type="usage">read</permits>
+      <permits type="usage">inference</permits>
+      <permits type="usage">search-indexing</permits>
+      <!-- Hard prohibition: this content may NOT be used to train models. -->
+      <prohibits type="usage">train</prohibits>
+      <prohibits type="usage">fine-tune</prohibits>
+      <prohibits type="usage">redistribute</prohibits>
+      <payment type="purchase">
+        <!-- Per-request settlement; exact amount is returned in the x402 402
+             challenge (base price x content-tier x agent-class multiplier). -->
+        <standard>https://rslstandard.org/payment/per-request</standard>
+        <currency>USDC</currency>
+        <network>BASE_SEPOLIA</network>
+        <note>Effective price = base (0.002 USDC) x content-tier x agent-class multiplier. See the x402 402 challenge for the authoritative amount.</note>
+      </payment>
+      <legal type="terms">All sample content is synthetic and illustrative. No warranty.</legal>
+    </license>
+  </content>
+</rsl>

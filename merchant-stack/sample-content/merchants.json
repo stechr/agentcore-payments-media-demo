@@ -27,6 +27,16 @@
       "pricing": {"standard": 0.004, "premium": 0.006, "data": 0.005},
       "verified": true,
       "established": "2024-06-20"
+    },
+    "quillrook-press": {
+      "name": "Quillrook Press",
+      "description": "Verified premium publisher — payments verified and settled on-chain at the edge via AWS WAF AI traffic monetization (x402)",
+      "pricing": {"standard": 0.006, "premium": 0.018, "data": 0.010},
+      "verified": true,
+      "established": "2026-06-15",
+      "settlement": "edge-managed",
+      "verification": "on-chain",
+      "distribution": "waf-monetized"
     }
   }
 }
